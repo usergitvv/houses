@@ -1,2 +1,2 @@
 # houses
-Simple web-page
+Simple web-page, training work.
