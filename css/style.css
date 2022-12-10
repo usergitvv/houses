@@ -1,0 +1,994 @@
+/* Css-styles */
+
+body {
+    font-family: "Poiret One", cursive;
+    font-size: 16px;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    margin: 0;
+    background-color: rgb(10, 10, 39);
+}
+
+.lock {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Page
+================== */
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-height: -webkit-fill-available;
+
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: #000;
+}
+
+
+/* Header
+================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-left: 110px;
+    z-index: 10;
+
+    width: 85%;
+    height: 65px;
+    margin: 0 110px 0 70px;
+    background-color: transparent;
+}
+
+.header__logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+
+.header__logo:hover {
+    text-decoration: underline;
+}
+
+.header__logo span {
+    color: #F8D002;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    height: 100%;
+}
+
+.header__nav a {
+    display: block;
+    height: 100%;
+
+    text-decoration: none;
+    color: #fff;
+    line-height: 18px;
+
+    margin-left: 40px;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    transition: color .2s linear, border .2s linear, background-color .2s linear;
+}
+
+.header__nav a:hover {
+    color: #e4b341;
+    border: 1px solid #e4b341;
+    transition: color .2s linear, border .2s linear;
+}
+
+.active {
+    color: #000;
+    background-color: #e4b341;
+    transition: color .2s linear, background-color .2s linear;
+}
+
+.header__nav a.active:hover {
+    color: #000;
+}
+
+.header__nav.show {
+    opacity: 1;
+    display: block;
+    height: auto;
+    margin-top: 18px;
+
+    background-color: rgba(0 0 0 / 80%);
+    padding-top: 10px;
+    padding-right: 10px;
+    overflow: auto;
+
+    transform: translateY(0);
+    transition: transform .3s linear, opacity .3s linear;
+}
+
+.header__nav.show a {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 0;
+    height: auto;
+}
+
+.burger {
+    display: none;
+}
+
+.burger__sign {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+
+    position: relative;
+    top: -10px;
+    left: calc(100% - 40px);
+    z-index: 12;
+
+    transition: transform .2s linear, opacity .2s linear;
+}
+
+.burger__sign.opened {
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform .2s linear;
+}
+
+.burger__sign.opened::before {
+    top: 0;
+    transform: rotate(90deg);
+    transition: transform .2s linear;
+}
+
+.burger__sign.opened::after {
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.burger__sign::before,
+.burger__sign::after {
+    position: absolute;
+    left: 0;
+    display: block;
+
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 12;
+}
+
+.burger__sign::before {
+    top: -10px;
+}
+
+.burger__sign::after {
+    top: 10px;
+}
+
+/* Intro
+=================== */
+
+.intro {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 763px;
+    background: #000 url("../images/intro/intro-bg.jpg") center/cover no-repeat;
+    margin: 0;
+}
+
+.info {
+    margin-top: 295px;
+    margin-left: 150px;
+
+    width: 385px;
+}
+
+.title {
+    font-family: "Montserrat Alternates";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    color: #fff;
+
+    margin-bottom: 15px;
+}
+
+.text {
+    margin-bottom: 20px;
+    line-height: 18px;
+}
+
+.btn {
+    background-color: #D8AD47;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 19px;
+
+    transition: box-shadow .2s linear;
+    font-family: "Montserrat Alternates";
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: #000;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 9px #D8AD47;
+
+    transition: box-shadow .2s linear;
+}
+
+.btn:active {
+    background-color: #a17f2e;
+}
+
+/* About
+==================== */
+
+.about {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0;
+    padding-bottom: 60px;
+    background-color: #020710;
+}
+
+.about__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 150px;
+    margin-top: 35px;
+}
+
+.info_about {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 55px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #fff;
+}
+
+.title_about {
+    color: #D8AD47;
+}
+
+.img_about {
+    width: 670px;
+    height: 486px;
+    margin-right: 100px;
+}
+
+.img_remark {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 120px;
+    height: 122px;
+}
+
+.about__remark_text {
+    font-size: 20px;
+    line-height: 23px;
+    color: #D8AD47;
+
+    display: inline-block;
+    vertical-align: middle;
+    width: 465px;
+    margin-left: 10px;
+}
+
+/* Projects
+========================== */
+
+.projects {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0;
+
+    background: url("../images/projects/Projects-bg.jpg") center/cover no-repeat;
+}
+
+.info_projects {
+    margin: 0 0 30px 0;
+    order: 1;
+}
+
+.title_projects {
+    color: #D8AD47;
+}
+
+.projects__items {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    margin: 165px 145px 45px 150px;
+}
+
+.projects__items_other {
+    margin-top: 45px;
+    margin-right: 10px;
+    justify-content: flex-start;
+}
+
+.projects__img-wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    order: 2;
+}
+
+div[data-city="Maiami"] {
+    order: 1;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+div[data-city="Sietl"] {
+    order: 2;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+div[data-city="Orlando"] {
+    order: 3;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.img_projects {
+    width: 718px;
+    height: 364px;
+}
+
+.img_projects-other {
+    width: 413px;
+    height: 364px;
+}
+
+.projects__items_title,
+.projects__items_subtitle,
+.projects__items-room1,
+.projects__items-room2,
+.btn_projects {
+    position: absolute;
+    left: 35px;
+    z-index: 2;
+}
+
+.projects__items_title {
+    font: 900 normal 69px/84px "Montserrat Alternates", sans-serif;
+    color: rgba(255, 255, 255, .8);
+
+    top: 15px;
+}
+
+.projects__items_subtitle {
+    font: 800 normal 36px/44px "Montserrat Alternates", sans-serif;
+    color: #D8AD47;
+
+    top: 100px;
+}
+
+.projects__items_subtitle sup {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.projects__items-room1 {
+    top: 170px;
+}
+
+.projects__items-room2 {
+    top: 215px;
+
+    margin-bottom: 25px;
+}
+
+.img_projects-sign {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 33px;
+    height: 33px;
+}
+
+.projects__items_text {
+    font: 400 normal 17px/20px "Montserrat Alternates", sans-serif;
+    color: rgba(255, 255, 255, 1);
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.btn_projects {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+
+    top: 280px;
+
+    transition: box-shadow .2s linear, background-color .2s linear, color .2s linear, border .2s linear;
+}
+
+.btn_projects:hover {
+    background-color: #D8AD47;
+    cursor: pointer;
+    box-shadow: 0 0 9px #D8AD47;
+    color: #000;
+
+    border: 0;
+
+    transition: box-shadow .2s linear, background-color .2s linear, color .2s linear, border .2s linear;
+}
+
+.btn_projects:active {
+    background-color: #a17f2e;
+}
+
+/* Contacts
+===================== */
+
+.contacts {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0;
+
+    background: #000 url("../images/contacts/Contacts-bg.jpg") center/cover no-repeat;
+}
+
+.contacts__box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    margin-top: 85px;
+    margin-left: 150px;
+    margin-bottom: 145px;
+    margin-right: 100px;
+}
+
+.contacts__map {
+    margin-right: 45px;
+    margin-bottom: 30px;
+}
+
+.contacts__info {
+    margin-right: 150px;
+    margin-bottom: 30px;
+}
+
+.info_contacts {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.info_contacts .title {
+    color: #D8AD47;
+}
+
+.img_contacts {
+    width: 258px;
+    height: 218px;
+}
+
+.img_contacts-sign {
+    width: 26px;
+    height: 26px;
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.contacts__item {
+    margin-bottom: 35px;
+}
+
+.contacts__item_address {
+    line-height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contacts__item_link {
+    text-decoration: none;
+    font: 400 normal 16px/18px "Poiret One", cursive;
+    color: #fff;
+}
+
+.contacts__item_link:hover {
+    text-decoration: underline;
+}
+
+.contacts__form {
+    background-color: rgba(255, 255, 255, .2);
+    text-align: center;
+    width: 436px;
+    min-height: 265px;
+
+    border-radius: 40px;
+    margin-bottom: 30px;
+    padding: 30px 50px;
+}
+
+.contacts__form_title {
+    font: 400 normal 17px/20px "Montserrat Alternates", sans-serif;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.input__wrapper {
+    width: 337px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.input {
+    padding: 0;
+    border: 0;
+    background: none;
+    width: 100%;
+    color: rgba(255, 255, 255, 1);
+
+    appearance: none;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.input::placeholder {
+    font: 400 normal 16px/18px "Poiret One", cursive;
+    color: #fff;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* Footer
+================== */
+
+.footer {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto 0 0 0;
+    padding: 25px 0 25px;
+
+    min-height: 152px;
+
+    background-color: #02070F;
+    text-align: center;
+}
+
+.footer__wrapper {
+    margin-top: 25px;
+}
+
+.footer p {
+    font: 400 normal 12px/14px "Poiret One", cursive;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Modal
+============================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0 0 0 / 80%);
+}
+
+.modal__window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.modal__title {
+    text-align: center;
+}
+
+.modal__close {
+    position: absolute;
+    top: -25px;
+    left: 100%;
+
+    width: 35px;
+    height: 35px;
+    padding-top: 4px;
+
+    text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+
+    background-color: #D8AD47;
+    border-radius: 50%;
+    color: #000;
+
+    transition: transform .2s linear;
+}
+
+.modal__close:hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: transform .2s linear;
+}
+
+.modal__opened {
+    display: block;
+}
+
+/* MEDIA REQUESTS +++++++++++++++
+==================================== */
+
+/* --- Projects --- */
+
+@media (max-width: 900px) {
+    .img_projects {
+        width: 100%;
+        height: auto;
+    }
+
+    button[data-btn="boston"] {
+        top: 105px;
+        left: 250px
+    }
+
+    div[data-room="bedroom"] {
+        top: 170px;
+        left: 245px;
+    }
+}
+
+@media (max-width: 795px) {
+
+    /* --- About --- */
+
+    .img_about {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 709px) {
+
+    /* --- Intro --- */
+
+    .info {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* --- About --- */
+
+    .about__inner {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .info_about {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img_remark {
+        display: block;
+    }
+
+    .about__remark_text {
+        display: block;
+    }
+
+    .img_about {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* --- Projects --- */
+
+    button[data-btn="boston"] {
+        top: 280px;
+        left: 35px;
+    }
+
+    div[data-room="bedroom"] {
+        top: 215px;
+        left: 35px;
+    }
+
+    .projects__items_title {
+        font-size: 60px;
+        line-height: 75px;
+    }
+
+    .projects__items {
+        margin: 90px auto 45px;
+        justify-content: center;
+    }
+
+    .projects__items_other {
+        justify-content: center;
+        margin-right: auto;
+        margin-top: 30px;
+    }
+
+    /* --- Contacts --- */
+
+    .contacts__box {
+        margin-bottom: 100px;
+        margin-left: auto;
+        margin-right: auto;
+
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 575px) {
+
+    /* Header */
+
+    .header {
+        background-color: rgba(0, 0, 0, .8);
+        width: 100vw;
+        display: block;
+        margin: 0;
+    }
+
+    .header__logo-wrapper {
+        margin-left: 10px;
+        margin-top: 15px;
+    }
+
+    .header__nav {
+        display: block;
+        opacity: 0;
+        transform: translateY(-350%);
+        transition: transform .3s linear, opacity .3s linear;
+    }
+
+    .header__nav a {
+        margin-left: 10px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    /* --- Intro --- */
+
+    .intro {
+        min-height: 500px;
+    }
+
+    .info {
+        margin-top: 200px;
+    }
+
+    /* --- About --- */
+
+    .info_about {
+        margin-top: 50px;
+    }
+
+    .about__inner {
+        margin-top: 0;
+    }
+
+    .img_remark {
+        margin: 0 auto;
+    }
+
+    .about__remark_text {
+        font-size: 16px;
+        line-height: 18px;
+
+        width: 100%;
+        padding: 5px 25px;
+        margin-left: 0;
+    }
+
+    /* --- Projects --- */
+
+    .info_projects {
+        margin-top: 50px;
+    }
+
+    div[data-city="Maiami"],
+    div[data-city="Sietl"],
+    div[data-city="Orlando"] {
+        margin-right: 0;
+    }
+
+    .projects__items {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 449px) {
+
+    /* --- Intro --- */
+
+    .info {
+        width: 100%;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .text {
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    .btn_intro {
+        margin-left: 10px;
+    }
+
+
+    /* --- Projects --- */
+
+    .btn_catalog {
+        margin-left: 10px;
+    }
+
+    div[data-city="Boston"] {
+        margin-bottom: 30px;
+    }
+
+    .projects__items_title {
+        font-size: 50px;
+        line-height: 65px;
+    }
+
+    .projects__items {
+        margin: 0 5px 0 5px;
+    }
+
+    /* --- Contacts --- */
+
+    .info_contacts {
+        margin-top: 50px;
+    }
+
+    .contacts__map {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img_contacts {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contacts__info {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contacts__form {
+        padding: 20px 30px;
+        margin-bottom: 0;
+        width: 100%;
+        margin-left: 5px;
+        margin-right: 5px;
+        min-height: auto;
+    }
+
+    .input__wrapper {
+        width: 100%;
+    }
+
+    /* --- Footer --- */
+
+    .footer {
+        padding: 10px 0 10px;
+        min-height: 130px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    /* --- Projects --- */
+
+    .btn_projects-other {
+        top: 210px;
+        left: 185px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    /* --- Projects --- */
+
+    button[data-btn="boston"] {
+        top: 260px;
+    }
+
+    .contacts__box {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 568px) and (max-height: 320px) and (orientation: landscape) {
+
+    /* --- Contacts --- */
+
+    .info_contacts {
+        margin-top: 50px;
+    }
+
+    .contacts__box {
+        margin-top: 20px;
+    }
+
+}
